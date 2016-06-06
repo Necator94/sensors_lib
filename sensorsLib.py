@@ -9,11 +9,11 @@ class sensors(threading.Thread):
 		self.queue = Queue.Queue()
 		self.gpio = 44
 		self.stopsign = None
-		threading.Thread.__init__(self)
 		self.tm = 0.1
+		threading.Thread.__init__(self)
 
+	#checking cycle
 	def run(self):
-		#checking cycle
 		while True:	
 			try:
 				if self.stopsign == 'stopScanning':
